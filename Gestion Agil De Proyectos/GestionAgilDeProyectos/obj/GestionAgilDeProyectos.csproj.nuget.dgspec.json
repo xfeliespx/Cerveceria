@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ibane\\Desktop\\Gestion Agil De Proyectos\\GestionAgilDeProyectos\\GestionAgilDeProyectos.csproj": {}
+    "C:\\Users\\ibane\\Desktop\\Nueva carpeta (2)\\Cerveceria\\Gestion Agil De Proyectos\\GestionAgilDeProyectos\\GestionAgilDeProyectos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ibane\\Desktop\\Gestion Agil De Proyectos\\GestionAgilDeProyectos\\GestionAgilDeProyectos.csproj": {
+    "C:\\Users\\ibane\\Desktop\\Nueva carpeta (2)\\Cerveceria\\Gestion Agil De Proyectos\\GestionAgilDeProyectos\\GestionAgilDeProyectos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ibane\\Desktop\\Gestion Agil De Proyectos\\GestionAgilDeProyectos\\GestionAgilDeProyectos.csproj",
+        "projectUniqueName": "C:\\Users\\ibane\\Desktop\\Nueva carpeta (2)\\Cerveceria\\Gestion Agil De Proyectos\\GestionAgilDeProyectos\\GestionAgilDeProyectos.csproj",
         "projectName": "GestionAgilDeProyectos",
-        "projectPath": "C:\\Users\\ibane\\Desktop\\Gestion Agil De Proyectos\\GestionAgilDeProyectos\\GestionAgilDeProyectos.csproj",
+        "projectPath": "C:\\Users\\ibane\\Desktop\\Nueva carpeta (2)\\Cerveceria\\Gestion Agil De Proyectos\\GestionAgilDeProyectos\\GestionAgilDeProyectos.csproj",
         "packagesPath": "C:\\Users\\ibane\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ibane\\Desktop\\Gestion Agil De Proyectos\\GestionAgilDeProyectos\\obj\\",
+        "outputPath": "C:\\Users\\ibane\\Desktop\\Nueva carpeta (2)\\Cerveceria\\Gestion Agil De Proyectos\\GestionAgilDeProyectos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
