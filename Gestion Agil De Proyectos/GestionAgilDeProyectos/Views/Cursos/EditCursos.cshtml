@@ -1,0 +1,102 @@
+﻿@using GestionAgilDeProyectos.Models
+@model Cursos
+@{
+    ViewData["Title"] = "Editar Curso";
+}
+<head>
+    <link href="@Url.Content("~/assets/css/Forms.css")" rel="stylesheet" />
+</head>
+<partial name="_MenuSistema" />
+<section class="category-list-area pt-100">
+    <div class="container">
+        <div class="category-list-wrapper">
+            <div class="row">
+                <section>
+                    <div class="section-title">
+                        <h2>@ViewData["Title"]</h2>
+                    </div>
+                    <div class="row" style="padding-top:20px">
+                        <div class="col-md-12">
+                            <form asp-action="EditCursos" method="post" enctype="multipart/form-data">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="FechaIngreso" />
+                                <input type="hidden" asp-for="Estado" />
+
+                                <div class="form-row" style="font-size:14px">
+                                    <div class="col">
+                                        <label asp-for="Nombre" class="control-label"></label>
+                                        <input asp-for="Nombre" class="form-control" placeholder="Nombre" style="font-size:12px" />
+                                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-row" style="font-size:14px">
+                                    <div class="col">
+                                        <label asp-for="ComunaID" class="control-label"></label>
+                                        <select asp-for="ComunaID" class="form-control" style="font-size:12px" asp-items="ViewBag.ComunaID"><option selected disabled value="">- Seleccionar -</option></select>
+                                        <span asp-validation-for="ComunaID" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-row" style="font-size:14px">
+                                    <div class="col">
+                                        <label asp-for="Direccion" class="control-label"></label>
+                                        <input asp-for="Direccion" class="form-control" placeholder="Direccion" style="font-size:12px" />
+                                        <span asp-validation-for="Direccion" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-row" style="font-size:14px">
+                                    <div class="col">
+                                        <label asp-for="FechaCurso" class="control-label"></label>
+                                        <input asp-for="FechaCurso" type="datetime-local" name="FechaCurso" class="form-control" style="font-size:12px" />
+                                        <span asp-validation-for="FechaCurso" class="text-danger"></span>
+                                    </div>
+                                    <div class="col">
+                                        <label asp-for="ValorPeso" class="control-label"></label>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text" style="font-size:12px">$</div>
+                                            </div>
+                                            <input asp-for="ValorPeso" id="inlineFormInputGroup" class="form-control" placeholder="Valor en Pesos" style="font-size:12px" />
+                                        </div>
+                                        <span asp-validation-for="ValorPeso" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-row" style="font-size:14px">
+                                    <label asp-for="Descripcion" class="control-label"></label>
+                                    <textarea asp-for="Descripcion" class="form-control" rows="5" placeholder="Descripcion..." style="resize:none;font-size:12px"></textarea>
+                                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-row" style="font-size:14px">
+                                    <div class="col">
+                                        <label asp-for="Logo" class="control-label"></label>
+                                        <input asp-for="Logo" type="file" name="Logo" class="form-control" style="font-size:12px" />
+                                        <span asp-validation-for="Logo" class="text-danger"></span>
+                                    </div>
+                                    <div class="col">
+                                        <label asp-for="Portada" class="control-label"></label>
+                                        <input asp-for="Portada" type="file" name="Portada" class="form-control" style="font-size:12px" />
+                                        <span asp-validation-for="Portada" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success" value="Actualizar">Actualizar</button> | <a asp-action="Index" style="text-decoration:none;color:black">Volver</a>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    @section Scripts {
+                        @{
+                            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+                        }
+                    }
+                </section>
+            </div>
+        </div>
+    </div>
+</section>

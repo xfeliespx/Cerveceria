@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using GestionAgilDeProyectos.Data;
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <li><a asp-area="Identity" asp-page="/Account/Manage/Index">Mi Perfil</a></li>
+
+    <li><a asp-area="Identity" asp-page="/Account/Manage/Email">Correo</a></li>
+
+    <li><a asp-area="Identity" asp-page="/Account/Manage/ChangePassword">Cambia tu Contraseña</a></li>
+
+    <li style="padding:0px;">
+        <form style="padding:0px;" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+            <button style="padding:0px;" type="submit" class="nav-link btn btn-link text-dark">Cerrar Sesión</button>
+        </form>
+    </li>
+}
+else
+{
+    <li><a asp-area="Identity" asp-page="/Account/Login">Iniciar Sesión</a></li>
+
+    <li><a asp-area="Identity" asp-page="/Account/Register">Registrate</a> </li>
+}

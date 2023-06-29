@@ -1,0 +1,164 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
+    {
+        Layout = (string)parentLayout;
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+}
+
+<!DOCTYPE html>
+<html lang="es-cl">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - FevePRO</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="@Url.Content("~/assets/images/favicon.png")" type="image/png" rel="shortcut icon">
+    <link href="@Url.Content("~/assets/css/animate.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/tiny-slider.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/glightbox.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/LineIcons.2.0.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/selectr.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/nouislider.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/nouislider.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/bootstrap-5.0.5-alpha.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/style.css")" rel="stylesheet" />
+</head>
+<body>
+
+    @RenderBody()
+
+    <script src="~/assets/js/bootstrap.bundle-5.0.0.alpha-min.js"></script>
+    <script src="~/assets/js/tiny-slider.js"></script>
+    <script src="~/assets/js/wow.min.js"></script>
+    <script src="~/assets/js/glightbox.min.js"></script>
+    <script src="~/assets/js/selectr.min.js"></script>
+    <script src="~/assets/js/nouislider.js"></script>
+    <script src="~/assets/js/main.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/assets/vendor/purecounter/purecounter.js"></script>
+    <script src="~/assets/vendor/aos/aos.js"></script>
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/assets/vendor/typed.js/typed.min.js"></script>
+    <script src="~/assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="~/assets/vendor/php-email-form/validate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/main.js"></script>
+    <script>
+        $('#Cerrarmodal').on('hidden.bs.modal', function () {
+
+        });
+    </script>
+    <script language="javascript">
+        function myFunction2() {
+            var input, filter, section, div, h4, i;
+            input = document.getElementById("buscador");
+            filter = input.value.toUpperCase();
+            section = document.getElementById("buscar");
+            div = section.getElementsByTagName("div");
+
+            for (i = 0; i < div.length; i++) {
+                h4 = div[i].getElementsByTagName("h4")[0];
+                if (h4) {
+                    var palabrasEnFiltro = filter.split(' ');
+                    var hallado = 0;
+                    for (var filtro of palabrasEnFiltro) {
+                        if (h4.innerHTML.toUpperCase().indexOf(filtro) > -1) {
+                            hallado++;
+                        }
+                    }
+
+                    if (hallado === palabrasEnFiltro.length) {
+                        div[i].style.display = "";
+                    } else {
+                        div[i].style.display = "none";
+                    }
+
+                }
+            }
+
+        }
+    </script>
+    <script language="javascript">
+        function myFunction() {
+            var input, filter, section, div, h4, i;
+            input = document.getElementById("buscador2");
+            filter = input.value.toUpperCase();
+            section = document.getElementById("buscar2");
+            div = section.getElementsByTagName("div");
+
+            for (i = 0; i < div.length; i++) {
+                h4 = div[i].getElementsByTagName("h4")[0];
+                if (h4) {
+                    var palabrasEnFiltro = filter.split(' ');
+                    var hallado = 0;
+                    for (var filtro of palabrasEnFiltro) {
+                        if (h4.innerHTML.toUpperCase().indexOf(filtro) > -1) {
+                            hallado++;
+                        }
+                    }
+
+                    if (hallado === palabrasEnFiltro.length) {
+                        div[i].style.display = "";
+                    } else {
+                        div[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="@Url.Content("http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js")"></script>
+    <script src="@Url.Content("http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Paginador/js/index.js")"></script>
+    <script src="@Url.Content("~/js/Select.js")"></script>
+    <script>
+        function myFunction() {
+            var input, filter, found, table, tr, td, i, j;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                for (j = 0; j < td.length; j++) {
+                    if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                    }
+                }
+                if (found) {
+                    tr[i].style.display = "";
+                    found = false;
+                } else {
+                    if (tr[i].id != 'tableHeader') { tr[i].style.display = "none"; }
+                }
+            }
+        }
+    </script>
+    <script>
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

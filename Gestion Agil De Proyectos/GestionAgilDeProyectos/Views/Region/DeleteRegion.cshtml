@@ -1,0 +1,45 @@
+﻿@using GestionAgilDeProyectos.Models
+@model Region
+@{
+    ViewData["Title"] = "Eliminar Region";
+}
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+</style>
+</head>
+    <section id="about" class="about">
+      <div class="container">
+      <div class="section-title">
+        <h2>@ViewData["Title"]</h2>       
+      </div>
+        <table>
+          <tr>
+            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.FechaIngreso)</th>
+            <th>@Html.DisplayNameFor(model => model.FechaActualizacion)</th>
+          </tr>
+            <tr>
+            <td>@Html.DisplayFor(model => model.Nombre)</td>
+            <td>@Html.DisplayFor(model => model.FechaIngreso)</td>
+            <td>@Html.DisplayFor(model => model.FechaActualizacion)</td>
+          </tr>
+        </table>
+        <br />
+        <form asp-action="DeleteRegion">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            <a asp-action="Index" style="text-decoration:none;color:black">Volver</a>
+        </form>
+      </div>
+    </section>

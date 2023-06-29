@@ -1,0 +1,31 @@
+﻿@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "Cerrar Sesion";
+}
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>@ViewData["Title"]</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+            @{
+                if (User.Identity.IsAuthenticated)
+                {
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                        <button type="submit" class="btn btn-primary">Cerrar Sesión</button>
+                    </form>
+               
+                }
+                else
+                {
+                    <p>Ha cerrado correctamente la sesión en Reality First.</p>
+                }
+            }
+      </div>             
+    </div>
+    </section>

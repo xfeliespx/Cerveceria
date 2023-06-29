@@ -1,0 +1,33 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Confirmacion de Registro";
+}
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>@ViewData["Title"]</h2>
+      </div>             
+    </div>
+    </section>
+
+<div class="container">
+    <div class="col-md-4">
+        @{
+            if (@Model.DisplayConfirmAccountLink)
+            {
+
+        <p>
+            Para confirmar la creacion de tu cuenta en Reality First ingresa al siguiente link <a id="confirm-link" href="@Model.EmailConfirmationUrl">Confirma tu cuenta</a>
+        </p>
+            }
+            else
+            {
+        <p>
+                Please check your email to confirm your account.
+        </p>
+            }
+        }
+    </div>
+</div>

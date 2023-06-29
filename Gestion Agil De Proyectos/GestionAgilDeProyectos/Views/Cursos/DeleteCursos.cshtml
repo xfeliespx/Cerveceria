@@ -1,0 +1,69 @@
+﻿@using GestionAgilDeProyectos.Models
+@model Cursos
+@{
+    ViewData["Title"] = "Eliminar Curso";
+}
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+</head>
+<partial name="_MenuSistema" />
+<section class="pricing-area pt-100">
+    <div class="container">
+        <div class="row gx-5">
+            <aside class="col-lg-6">
+                <div class="border rounded-4 mb-3 d-flex justify-content-center">
+                    <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="@Url.Content(Model.Portada)">
+                        <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="@Url.Content(Model.Portada)" />
+                    </a>
+                </div>
+                <div class="d-flex justify-content-center mb-3">
+                    <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="@Url.Content(Model.Logo)" class="item-thumb">
+                        <img width="200" height="150" class="rounded-2" src="@Url.Content(Model.Logo)" />
+                    </a>
+                </div>
+            </aside>
+            <main class="col-lg-6">
+                <div class="ps-lg-3">
+                    <h4 class="title text-dark">
+                        @Html.DisplayFor(item => item.Nombre)
+                    </h4>
+                    <div class="d-flex flex-row my-3">
+                        <div class="text-warning mb-1 me-2">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="ms-1">
+                                4.5
+                            </span>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="text-success ms-2">@Html.DisplayFor(item => item.Estado)</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="h5">@Html.DisplayFor(item => item.ValorPeso)</span>
+                        <span class="text-muted">/Por Mes</span>
+                    </div>
+                    <p>@Html.DisplayFor(item => item.Descripcion)</p>
+                    </br>
+                    <div class="row">
+                        <dt class="col-3">Nombre Curso</dt>
+                        <dd class="col-9">@Html.DisplayFor(item => item.Nombre)</dd>
+                        <dt class="col-3">Direccion</dt>
+                        <dd class="col-9">@Html.DisplayFor(item => item.Direccion)</dd>
+                    </div>
+                    <hr />
+                    <div class="row mb-4">
+                        <form asp-action="DeleteCursos">
+                            <input type="hidden" asp-for="Id" />
+                            <button type="submit" class="btn btn-danger" value="Eliminar">Eliminar</button> |
+                            <a asp-action="Index" style="text-decoration:none;color:black">Volver</a>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
